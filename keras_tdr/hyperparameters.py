@@ -34,3 +34,5 @@ PRETRAINED_WEIGHTS = {
         }
     }
 }
+
+dataset_path = './represent_data'
