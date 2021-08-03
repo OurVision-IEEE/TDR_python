@@ -1,5 +1,5 @@
 import tensorflow as tf
-from representative_data_gen import representative_data_gen
+from .representative_data_gen import representative_data_gen
 
 def convert_tflite(quantization, prediction_model):
     converter = tf.lite.TFLiteConverter.from_keras_model(prediction_model)
