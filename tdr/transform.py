@@ -2,6 +2,7 @@ import tensorflow as tf
 from repeat import _repeat
 from meshgrid import _meshgrid
 
+# Transform image to specific dimensions required for the model
 def _transform(inputs):
     locnet_x, locnet_y = inputs
     output_size = locnet_x.shape[1:]
