@@ -1,7 +1,8 @@
 from tensorflow import keras
+from .transform import _transform
+from .CTCDecoder import CTCDecoder
+
 import numpy as np
-from transform import _transform
-from CTCDecoder import CTCDecoder
 
 def build_model(alphabet,
                 height,

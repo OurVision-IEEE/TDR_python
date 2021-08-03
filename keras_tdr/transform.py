@@ -1,6 +1,6 @@
 import tensorflow as tf
-from repeat import _repeat
-from meshgrid import _meshgrid
+from .repeat import _repeat
+from .meshgrid import _meshgrid
 
 # Transform image to specific dimensions required for the model
 def _transform(inputs):
