@@ -42,16 +42,16 @@ if __name__ == "__main__":
     tflite_output = run_tflite_model(image_path, 'dr')
     final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
     print(final_output)
-    cv2.imshow(cv2.imread(image_path))
+    cv2.imshow("DR Model", cv2.imread(image_path))
 
     # Running Float16 Quantization
     tflite_output = run_tflite_model(image_path, 'float16')
     final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
     print(final_output)
-    cv2.imshow(cv2.imread(image_path))
+    cv2.imshow("Float16 Model", cv2.imread(image_path))
 
     # Running Integer Quantization
     tflite_output = run_tflite_model(image_path, 'int8')
     final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
     print(final_output)
-    cv2.imshow(cv2.imread(image_path))
+    cv2.imshow("Int8 Model", cv2.imread(image_path))
