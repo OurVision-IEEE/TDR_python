@@ -18,3 +18,5 @@ if __name__ == "__main__":
             sha256=weights_dict['weights']['top']['sha256']
         )
     )
+
+    model.summary()
