@@ -24,5 +24,12 @@ if __name__ == "__main__":
     model.summary()
 
     dataset_path = './represent_data'
+    
     quantization = 'dr' #@param ["dr", "float16"]
     convert_tflite(quantization, prediction_model)
+    
+    quantization = 'float16' #@param ["dr", "float16"]
+    convert_tflite(quantization, prediction_model)
+
+    quantization = 'int8'  #@param ["dr", "float16", 'int8', 'full_int8']
+    convert_tflite(quantization)
