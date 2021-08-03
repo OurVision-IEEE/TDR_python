@@ -1,6 +1,8 @@
+from keras_tdr.representative_data_gen import representative_data_gen
 from keras_tdr.build_model import build_model
 from keras_tdr.hyperparameters import DEFAULT_ALPHABET, DEFAULT_BUILD_PARAMS, PRETRAINED_WEIGHTS
 from keras_tdr.network import download_and_verify
+from keras_tdr.convert_tflite import convert_tflite
 
 if __name__ == "__main__":
     build_params = DEFAULT_BUILD_PARAMS
@@ -20,3 +22,7 @@ if __name__ == "__main__":
     )
 
     model.summary()
+
+    dataset_path = './represent_data'
+    quantization = 'dr' #@param ["dr", "float16"]
+    convert_tflite(quantization, prediction_model)
