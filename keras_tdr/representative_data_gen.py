@@ -2,7 +2,9 @@ import os
 import numpy as np
 import cv2
 
-def representative_data_gen(dataset_path):
+from .hyperparameters import dataset_path
+
+def representative_data_gen():
     for file in os.listdir(dataset_path):
         image_path = dataset_path + file
         input_data = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
