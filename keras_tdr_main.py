@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     model.summary()
 
-    dataset_path = './represent_data'
     
     quantization = 'dr' #@param ["dr", "float16"]
     convert_tflite(quantization, prediction_model)
