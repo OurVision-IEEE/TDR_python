@@ -35,4 +35,4 @@ PRETRAINED_WEIGHTS = {
     }
 }
 
-dataset_path = './represent_data'
+dataset_path = './represent_data/'
