@@ -37,7 +37,7 @@ if __name__ == "__main__":
     quantization = 'int8'  #@param ["dr", "float16", 'int8', 'full_int8']
     convert_tflite(quantization)
 
-    image_path = 'images/available.jpg'
+    image_path = 'images/available.png'
 
     # Running Dynamic Range Quantization
     tflite_output = run_tflite_model(image_path, 'dr')
