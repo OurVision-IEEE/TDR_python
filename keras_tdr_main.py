@@ -3,6 +3,9 @@ from keras_tdr.build_model import build_model
 from keras_tdr.hyperparameters import DEFAULT_ALPHABET, DEFAULT_BUILD_PARAMS, PRETRAINED_WEIGHTS
 from keras_tdr.network import download_and_verify
 from keras_tdr.convert_tflite import convert_tflite
+from keras_tdr.run_tflite_model import run_tflite_model
+
+import cv2
 
 if __name__ == "__main__":
     build_params = DEFAULT_BUILD_PARAMS
@@ -33,3 +36,23 @@ if __name__ == "__main__":
 
     quantization = 'int8'  #@param ["dr", "float16", 'int8', 'full_int8']
     convert_tflite(quantization)
+
+    image_path = 'images/available.jpg'
+
+    # Running Dynamic Range Quantization
+    tflite_output = run_tflite_model(image_path, 'dr')
+    final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
+    print(final_output)
+    cv2.imshow(cv2.imread(image_path))
+
+    # Running Float16 Quantization
+    tflite_output = run_tflite_model(image_path, 'float16')
+    final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
+    print(final_output)
+    cv2.imshow(cv2.imread(image_path))
+
+    # Running Integer Quantization
+    tflite_output = run_tflite_model(image_path, 'int8')
+    final_output = "".join(alphabets[index] for index in tflite_output[0] if index not in [blank_index, -1])
+    print(final_output)
+    cv2.imshow(cv2.imread(image_path))
