@@ -35,7 +35,7 @@ if __name__ == "__main__":
     convert_tflite(quantization, prediction_model)
 
     quantization = 'int8'  #@param ["dr", "float16", 'int8', 'full_int8']
-    convert_tflite(quantization)
+    convert_tflite(quantization, prediction_model)
 
     image_path = 'images/available.png'
 
